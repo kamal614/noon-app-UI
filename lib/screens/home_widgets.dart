@@ -230,7 +230,13 @@ Widget specialScroller(BuildContext context) {
                 children: [
                   Expanded(child: Container(color: Colors.grey)),
                   vSpacer(8),
-                  const Text("From 10AED"),
+                  const Text(
+                    "From 10AED",
+                    style: TextStyle(
+                        color: Colors.yellow,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 17),
+                  ),
                   const Text(
                     "Yoga Equipment",
                     style: TextStyle(color: Colors.white),
@@ -240,6 +246,32 @@ Widget specialScroller(BuildContext context) {
               )),
         );
       },
+    ),
+  );
+}
+
+Widget mySearchBar() {
+  return Container(
+    height: 50,
+    width: double.infinity,
+    margin: const EdgeInsets.all(5),
+    decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        border: Border.all(color: Colors.grey)),
+    child: Padding(
+      padding: const EdgeInsets.only(left: 8.0),
+      child: Row(
+        children: <Widget>[
+          const Icon(
+            Icons.search,
+            color: Colors.grey,
+          ),
+          Text(
+            TextConstant().lookingFor,
+            style: TextStyle(color: Colors.grey),
+          )
+        ],
+      ),
     ),
   );
 }
