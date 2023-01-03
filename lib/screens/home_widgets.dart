@@ -5,7 +5,7 @@ import '../const/text_const.dart';
 
 Widget cuisineScroller(bContext) {
   return SizedBox(
-    height: MediaQuery.of(bContext).size.height / 3,
+    height: MediaQuery.of(bContext).size.height * .28,
     child: ListView.builder(
         itemCount: 1,
         itemBuilder: (context, index) {
@@ -268,10 +268,25 @@ Widget mySearchBar() {
           ),
           Text(
             TextConstant().lookingFor,
-            style: TextStyle(color: Colors.grey),
+            style: const TextStyle(color: Colors.grey),
           )
         ],
       ),
     ),
+  );
+}
+
+Widget deliverTo() {
+  return Row(
+    children: [
+      Icon(Icons.location_on_outlined),
+      Text(TextConstant().deliverTo),
+      Text(
+        " Dubai",
+        style: TextStyle(fontWeight: FontWeight.bold),
+      ),
+      hSpacer(3),
+      Icon(Icons.arrow_drop_down_outlined)
+    ],
   );
 }

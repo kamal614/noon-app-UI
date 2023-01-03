@@ -9,4 +9,5 @@ class TextConstant {
   String mobileName = "Mobile Name";
   String treatSpecial = "TREAT YOURSELF SPECIAL";
   String lookingFor = "What are you looking for?";
+  String deliverTo = "Deliver to";
 }
