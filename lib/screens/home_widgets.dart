@@ -7,12 +7,12 @@ import 'product_screen.dart';
 
 Widget cuisineScroller(bContext) {
   return SizedBox(
-    height: MediaQuery.of(bContext).size.height * .28,
+    height: MediaQuery.of(bContext).size.height * .29,
     child: ListView.builder(
         itemCount: 1,
         itemBuilder: (context, index) {
           return SizedBox(
-            height: MediaQuery.of(context).size.height / 2.85,
+            height: MediaQuery.of(context).size.height * .29,
             child: Center(
               child: ListView.separated(
                   scrollDirection: Axis.horizontal,

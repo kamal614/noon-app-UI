@@ -25,7 +25,10 @@ class ProductScreen extends StatelessWidget {
                         onTap: () {
                           Get.back();
                         },
-                        child: const Icon(Icons.arrow_back))
+                        child: const Icon(
+                          Icons.arrow_back,
+                          size: 35,
+                        ))
                   ],
                 ),
                 mySearchBar(),
