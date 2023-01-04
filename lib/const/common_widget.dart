@@ -141,3 +141,53 @@ Widget priceInfo() {
     ],
   );
 }
+
+Widget mySilverAppBar() {
+  return SliverAppBar(
+    title: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
+      children: const [
+        Icon(
+          Icons.sports_basketball,
+          color: Colors.black,
+        ),
+        Icon(
+          Icons.food_bank,
+          color: Colors.black,
+        ),
+        Icon(
+          Icons.hub_rounded,
+          color: Colors.black,
+        ),
+        Icon(
+          Icons.cloud_circle,
+          color: Colors.black,
+        ),
+      ],
+    ),
+    centerTitle: true,
+    backgroundColor: Colors.white,
+    pinned: true,
+    floating: true,
+    snap: true,
+    bottom: const TabBar(
+      indicatorColor: Colors.black,
+      labelColor: Colors.black,
+      unselectedLabelColor: Colors.grey,
+      tabs: [
+        Tab(
+          text: "noon",
+        ),
+        Tab(
+          text: "Food",
+        ),
+        Tab(
+          text: "Grocery",
+        ),
+        Tab(
+          text: "Minutes",
+        ),
+      ],
+    ),
+  );
+}
