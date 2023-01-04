@@ -250,32 +250,6 @@ Widget specialScroller(BuildContext context) {
   );
 }
 
-Widget mySearchBar() {
-  return Container(
-    height: 50,
-    width: double.infinity,
-    margin: const EdgeInsets.all(5),
-    decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
-        border: Border.all(color: Colors.grey)),
-    child: Padding(
-      padding: const EdgeInsets.only(left: 8.0),
-      child: Row(
-        children: <Widget>[
-          const Icon(
-            Icons.search,
-            color: Colors.grey,
-          ),
-          Text(
-            TextConstant().lookingFor,
-            style: const TextStyle(color: Colors.grey),
-          )
-        ],
-      ),
-    ),
-  );
-}
-
 Widget deliverTo() {
   return Row(
     children: [

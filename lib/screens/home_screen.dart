@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:noon/const/common_widget.dart';
 import 'package:noon/const/text_const.dart';
+import 'package:noon/screens/product_screen.dart';
 
 import 'home_widgets.dart';
 
@@ -34,7 +36,11 @@ class HomeScreen extends StatelessWidget {
                   cuisineScroller(context),
                   headingText(TextConstant().recommeded),
                   vSpacer(8),
-                  recommendationSlider(),
+                  GestureDetector(
+                      onTap: () {
+                        Get.to(const ProductScreen());
+                      },
+                      child: recommendationSlider()),
                 ],
               ),
             ),
