@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../const/common_widget.dart';
 import '../const/text_const.dart';
+import 'product_screen.dart';
 
 Widget cuisineScroller(bContext) {
   return SizedBox(
@@ -214,38 +216,43 @@ Widget megaDealWidget(BuildContext context) {
 }
 
 Widget specialScroller(BuildContext context) {
-  return SizedBox(
-    height: 200,
-    child: ListView.builder(
-      scrollDirection: Axis.horizontal,
-      itemCount: 20,
-      itemBuilder: (context, index) {
-        return Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Container(
-              color: Colors.orange[900],
-              height: MediaQuery.of(context).size.height * .3,
-              width: MediaQuery.of(context).size.width * .3,
-              child: Column(
-                children: [
-                  Expanded(child: Container(color: Colors.grey)),
-                  vSpacer(8),
-                  const Text(
-                    "From 10AED",
-                    style: TextStyle(
-                        color: Colors.yellow,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17),
-                  ),
-                  const Text(
-                    "Yoga Equipment",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                  vSpacer(8),
-                ],
-              )),
-        );
-      },
+  return GestureDetector(
+    onTap: () {
+      Get.to(const ProductScreen());
+    },
+    child: SizedBox(
+      height: 200,
+      child: ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: 20,
+        itemBuilder: (context, index) {
+          return Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+                color: Colors.orange[900],
+                height: MediaQuery.of(context).size.height * .3,
+                width: MediaQuery.of(context).size.width * .3,
+                child: Column(
+                  children: [
+                    Expanded(child: Container(color: Colors.grey)),
+                    vSpacer(8),
+                    const Text(
+                      "From 10AED",
+                      style: TextStyle(
+                          color: Colors.yellow,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17),
+                    ),
+                    const Text(
+                      "Yoga Equipment",
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    vSpacer(8),
+                  ],
+                )),
+          );
+        },
+      ),
     ),
   );
 }

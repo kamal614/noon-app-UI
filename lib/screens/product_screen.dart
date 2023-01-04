@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
 import 'package:noon/const/common_widget.dart';
 import 'package:noon/const/text_const.dart';
 import 'package:noon/screens/home_widgets.dart';
@@ -21,7 +20,13 @@ class ProductScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
-                  children: const [Icon(Icons.arrow_back)],
+                  children: [
+                    GestureDetector(
+                        onTap: () {
+                          Get.back();
+                        },
+                        child: const Icon(Icons.arrow_back))
+                  ],
                 ),
                 mySearchBar(),
                 Container(

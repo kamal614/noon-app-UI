@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:noon/const/text_const.dart';
+
+import '../screens/product_screen.dart';
 
 SizedBox vSpacer(double reqHeight) {
   return SizedBox(height: reqHeight);
@@ -38,31 +41,37 @@ Container ratingWidget(num nosStar) {
 }
 
 Widget dealCard(BuildContext context) {
-  return Padding(
-    padding: const EdgeInsets.all(5.0),
-    child: Container(
-        color: Colors.white,
-        height: MediaQuery.of(context).size.width / 2 - 19,
-        width: MediaQuery.of(context).size.width / 2 - 19,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(TextConstant().mobileName),
-            Row(
-              children: const [
-                Text(
-                  "279",
-                  style: TextStyle(
-                      decoration: TextDecoration.lineThrough,
-                      color: Colors.grey),
-                ),
-                Text("192 AED",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))
-              ],
-            )
-          ],
-        )),
+  return GestureDetector(
+    onTap: () {
+      Get.to(const ProductScreen());
+    },
+    child: Padding(
+      padding: const EdgeInsets.all(5.0),
+      child: Container(
+          color: Colors.white,
+          height: MediaQuery.of(context).size.width / 2 - 19,
+          width: MediaQuery.of(context).size.width / 2 - 19,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(TextConstant().mobileName),
+              Row(
+                children: const [
+                  Text(
+                    "279",
+                    style: TextStyle(
+                        decoration: TextDecoration.lineThrough,
+                        color: Colors.grey),
+                  ),
+                  Text("192 AED",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold))
+                ],
+              )
+            ],
+          )),
+    ),
   );
 }
 
