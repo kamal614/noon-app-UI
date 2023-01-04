@@ -12,38 +12,80 @@ class ProductScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Scaffold(
-        bottomNavigationBar: cartController(context),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: const [Icon(Icons.arrow_back)],
+      child: DefaultTabController(
+        length: 2,
+        child: Scaffold(
+          bottomNavigationBar: cartController(context),
+          body: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: const [Icon(Icons.arrow_back)],
+                ),
+                mySearchBar(),
+                Container(
+                  color: Colors.purple,
+                  height: 50,
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.width,
+                  color: Colors.grey,
+                ),
+                vSpacer(8),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        "Colgate",
+                        style: TextStyle(color: Colors.grey, fontSize: 15),
+                      ),
+                      vSpacer(5),
+                      headingText("Optic White Toothpaste"),
+                      vSpacer(8),
+                      starsAndWidget(),
+                      vSpacer(10),
+                      const Text("75 ml"),
+                      vSpacer(10),
+                      priceInfo(),
+                      manInfo(),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: MediaQuery.of(context).size.height * .1,
+                  color: Colors.black,
+                ),
+                vSpacer(15),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                    height: MediaQuery.of(context).size.height * .1,
+                    color: Colors.yellow,
+                  ),
+                ),
+                tabView(context),
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      tabViewData(context),
+                      vSpacer(20),
+                      headingText(TextConstant().userReviews),
+                      userReview(),
+                      vSpacer(10),
+                      const Text(
+                          "There are 8 customer ratings and 1 customer review"),
+                    ],
+                  ),
+                ),
+                vSpacer(15)
+              ],
             ),
-            mySearchBar(),
-            Container(
-              color: Colors.purple,
-              height: 50,
-            ),
-            Container(
-              height: MediaQuery.of(context).size.width,
-              color: Colors.grey,
-            ),
-            vSpacer(8),
-            const Text(
-              "Colgate",
-              style: TextStyle(color: Colors.grey, fontSize: 15),
-            ),
-            vSpacer(5),
-            headingText("Optic White Toothpaste"),
-            vSpacer(8),
-            starsAndWidget(),
-            vSpacer(10),
-            const Text("75 ml"),
-            vSpacer(10),
-            priceInfo(),
-            manInfo()
-          ],
+          ),
         ),
       ),
     );

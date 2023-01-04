@@ -10,6 +10,7 @@ class TextConstant {
   String treatSpecial = "TREAT YOURSELF SPECIAL";
   String lookingFor = "What are you looking for?";
   String deliverTo = "Deliver to";
-  String addToCart = "Add To Cart";
+  String addToCart = "ADD TO CART";
   String vat = "(Inclusive of VAT)";
+  String userReviews = "User Reviews";
 }
