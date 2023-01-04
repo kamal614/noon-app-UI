@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:noon/const/common_widget.dart';
 import 'package:noon/const/text_const.dart';
 import 'package:noon/screens/product_screen.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 
 import 'home_widgets.dart';
 
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       mySearchBar(),
                       vSpacer(5),
                       deliverTo(),
-                      //SLIDER
+                      homeSlider(context)
                     ],
                   ),
                 ),

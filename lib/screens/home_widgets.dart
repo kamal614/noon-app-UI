@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -270,4 +271,32 @@ Widget deliverTo() {
       Icon(Icons.arrow_drop_down_outlined)
     ],
   );
+}
+
+Widget homeSlider(BuildContext context) {
+  return CarouselSlider(
+      items: [
+        Container(
+          width: MediaQuery.of(context).size.width,
+          color: Colors.grey,
+        ),
+        Container(
+          width: MediaQuery.of(context).size.width,
+          color: Colors.grey[700],
+        ),
+        Container(
+          width: MediaQuery.of(context).size.width,
+          color: Colors.grey[300],
+        ),
+      ],
+      options: CarouselOptions(
+        height: 180.0,
+        enlargeCenterPage: true,
+        autoPlay: true,
+        aspectRatio: 16 / 9,
+        autoPlayCurve: Curves.fastOutSlowIn,
+        enableInfiniteScroll: true,
+        autoPlayAnimationDuration: const Duration(milliseconds: 800),
+        viewportFraction: 0.8,
+      ));
 }
